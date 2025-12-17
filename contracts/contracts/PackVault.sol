@@ -390,7 +390,7 @@ contract PackVault is Ownable2Step, ReentrancyGuard, Pausable {
         
         for (uint i = 0; i < pack.allocations.length; i++) {
             TokenAllocation storage allocation = pack.allocations[i];
-            uint256 tokenPrice = priceOracle.getPrice(allocation.tokenAddress);
+            (uint256 tokenPrice, ) = priceOracle.getPrice(allocation.tokenAddress);
             totalValue += (allocation.currentBalance * tokenPrice) / 1e18;
         }
     }
@@ -491,7 +491,7 @@ contract PackVault is Ownable2Step, ReentrancyGuard, Pausable {
         view
         returns (uint256)
     {
-        uint256 expectedPrice = priceOracle.getPrice(token);
+        (uint256 expectedPrice, ) = priceOracle.getPrice(token);
         uint256 expectedOut = (amountIn * 1e18) / expectedPrice;
         
         // Apply slippage tolerance

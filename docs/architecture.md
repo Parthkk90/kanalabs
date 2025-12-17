@@ -1,5 +1,7 @@
 # Chota Crypto — System Architecture
 
+> For the execution phases and sprint plan, see the project roadmap in [docs/roadmap.md](./roadmap.md).
+
 ## 1. Vision Snapshot
 - **Product**: One-click INR → curated multi-chain crypto packs for mass retail in India.
 - **Differentiator**: Mutual-fund UX powered by ZyraLabs (Kana) infra: cross-chain routing, smart wallets, gas sponsorship, and keyless onboarding.
